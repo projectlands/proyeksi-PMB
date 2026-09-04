@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafik Proyeksi Sementera Data MARU 2026</title>
+    <title>Dashboard Proyeksi Data MARU Periode 20261</title>
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- html2canvas CDN untuk export ke gambar -->
@@ -146,7 +146,7 @@
 <body>
 
     <div class="header">
-        <h1>Dashboard Proyeksi Sementara MARU Periode 20261</h1>
+        <h1>Dashboard Proyeksi MARU Periode 20261</h1>
         <button class="btn-export" onclick="exportCharts()">Export Grafik (PNG)</button>
     </div>
 
@@ -158,11 +158,11 @@
                 <p>Total Pendaftar</p>
             </div>
             <div class="summary-card selesai">
-                <h2>38</h2>
+                <h2>42</h2>
                 <p>Total Selesai Daftar Ulang</p>
             </div>
             <div class="summary-card menunggu">
-                <h2>22</h2>
+                <h2>18</h2>
                 <p>Total Menunggu Daftar Ulang</p>
             </div>
         </div>
@@ -218,8 +218,8 @@
             data: {
                 labels: ['S1 Manajemen', 'D3 Akuntansi'],
                 datasets: [
-                    { label: 'Menunggu', data: [21, 1], backgroundColor: colors.menunggu },
-                    { label: 'Selesai', data: [37, 1], backgroundColor: colors.selesai }
+                    { label: 'Menunggu', data: [18, 0], backgroundColor: colors.menunggu },
+                    { label: 'Selesai', data: [40, 2], backgroundColor: colors.selesai }
                 ]
             },
             options: { ...commonOptions, scales: { y: { beginAtZero: true } } }
@@ -229,10 +229,10 @@
         new Chart(document.getElementById('kelasChart'), {
             type: 'bar',
             data: {
-                labels: ['Reg. Sore', 'Proksus', 'Reg. Pagi', 'Kelas Perempuan'],
+                labels: ['Reg. Pagi', 'Proksus', 'Kelas Perempuan', 'Reg. Sore'],
                 datasets: [
-                    { label: 'Menunggu', data: [3, 3, 13, 3], backgroundColor: colors.menunggu },
-                    { label: 'Selesai', data: [3, 10, 17, 8], backgroundColor: colors.selesai }
+                    { label: 'Menunggu', data: [12, 2, 2, 2], backgroundColor: colors.menunggu },
+                    { label: 'Selesai', data: [18, 11, 9, 4], backgroundColor: colors.selesai }
                 ]
             },
             options: { ...commonOptions, scales: { y: { beginAtZero: true } } }
@@ -245,7 +245,7 @@
                 labels: ['Menunggu', 'Selesai'],
                 datasets: [{
                     label: 'Jumlah Pendaftar',
-                    data: [22, 38],
+                    data: [18, 42],
                     backgroundColor: [colors.menunggu, colors.selesai]
                 }]
             },
@@ -261,10 +261,10 @@
             type: 'bar',
             indexAxis: 'y',
             data: {
-                labels: ['teman', 'saudara', 'lainya', 'instagram', 'media cetak', 'facebook', 'sosialisasi', 'website'],
+                labels: ['teman', 'saudara', 'instagram', 'lainya', 'media cetak', 'facebook', 'sosialisasi', 'website'],
                 datasets: [
-                    { label: 'Menunggu', data: [9, 4, 3, 4, 1, 1, 0, 0], backgroundColor: colors.menunggu },
-                    { label: 'Selesai', data: [18, 8, 3, 7, 0, 0, 1, 1], backgroundColor: colors.selesai }
+                    { label: 'Menunggu', data: [7, 3, 4, 2, 1, 1, 0, 0], backgroundColor: colors.menunggu },
+                    { label: 'Selesai', data: [20, 9, 7, 4, 0, 0, 1, 1], backgroundColor: colors.selesai }
                 ]
             },
             options: { ...commonOptions, scales: { x: { beginAtZero: true } } }
@@ -275,10 +275,10 @@
             type: 'bar',
             indexAxis: 'y',
             data: {
-                labels: ['Bu Gung Tini', 'Kmg Trisna', 'Novi Budiasni', 'Mertyani S.', 'Nyoman S.', 'N/A'],
+                labels: ['Bu Gung Tini', 'Novi Budiasni', 'Kmg Trisna', 'Mertyani S.', 'Nyoman S.', 'N/A'],
                 datasets: [
-                    { label: 'Menunggu', data: [2, 1, 3, 1, 1, 0], backgroundColor: colors.menunggu },
-                    { label: 'Selesai', data: [8, 2, 2, 2, 1, 5], backgroundColor: colors.selesai }
+                    { label: 'Menunggu', data: [2, 3, 0, 2, 1, 0], backgroundColor: colors.menunggu },
+                    { label: 'Selesai', data: [8, 2, 3, 2, 1, 5], backgroundColor: colors.selesai }
                 ]
             },
             options: { ...commonOptions, scales: { x: { beginAtZero: true } } }
@@ -291,7 +291,7 @@
             data: {
                 labels: ['SMAN 1 SUKASADA', 'SMKN 1 SINGARAJA', 'SMA N 2 SINGARAJA', 'SMA N1 BATURITI', 'SMK N 1 Kubutambahan', 'SMA MELAYA'],
                 datasets: [
-                    { label: 'Menunggu', data: [0, 1, 1, 0, 0, 0], backgroundColor: colors.menunggu },
+                    { label: 'Menunggu', data: [0, 2, 1, 0, 0, 0], backgroundColor: colors.menunggu },
                     { label: 'Selesai', data: [2, 1, 0, 1, 1, 1], backgroundColor: colors.selesai }
                 ]
             },
@@ -303,7 +303,7 @@
             const chartArea = document.getElementById('charts-area');
             html2canvas(chartArea, { scale: 2 }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'grafik_proyeksi_maru.png';
+                link.download = 'grafik_proyeksi_maru_20261.png';
                 link.href = canvas.toDataURL('image/png');
                 link.click();
             });
